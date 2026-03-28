@@ -2,6 +2,12 @@
 
 A Claude Code plugin that hooks into Pipedream and Hookdeck so Claude can listen for events from your apps (Gmail, Slack, GitHub, etc.) and actually do stuff in response — send emails, post messages, create docs, whatever.
 
+## How it works
+
+This is built on [Claude Code Channels](https://docs.anthropic.com/en/docs/claude-code) — a way for MCP servers to push real-time events directly into a Claude Code session. That's what makes this different from a normal MCP integration. Claude isn't just responding to prompts — it's receiving live events from your apps and reacting to them as they happen.
+
+The flow: Hookdeck receives a webhook from one of your apps → forwards it to a local HTTP listener → the MCP server pushes it into Claude's session via a Channel → Claude reads the event, matches it to a workflow, and takes action across your connected apps using Pipedream.
+
 ## Setup
 
 Install deps:
