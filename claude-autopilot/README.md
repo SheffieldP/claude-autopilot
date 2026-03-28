@@ -1,4 +1,4 @@
-# app-triggers
+# claude-autopilot
 
 MCP server that connects Claude Code to 2,000+ apps via Pipedream. Receives real-time webhook events through Hookdeck and exposes tools for connecting apps, deploying triggers, and running actions.
 

@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "app-triggers": {
+    "claude-autopilot": {
       "command": "bun",
-      "args": ["run", "./app-triggers/src/channel.ts"],
+      "args": ["run", "./claude-autopilot/src/channel.ts"],
       "env": {
         "PIPEDREAM_CLIENT_ID": "your_client_id_here",
         "PIPEDREAM_CLIENT_SECRET": "your_client_secret_here",

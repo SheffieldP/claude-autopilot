@@ -22,7 +22,7 @@ const pipedream = new PipedreamClient({
 });
 
 const mcp = new Server(
-  { name: "app-triggers", version: "0.1.0" },
+  { name: "claude-autopilot", version: "0.1.0" },
   {
     capabilities: {
       experimental: { "claude/channel": {} },
@@ -44,7 +44,7 @@ SETUP:
 - connect_app: Start OAuth flow to connect a new app
 - get_connected_accounts: See all connected apps and their auth provision IDs
 
-When an event arrives via <channel source="app-triggers">, read it and act if appropriate.
+When an event arrives via <channel source="claude-autopilot">, read it and act if appropriate.
 When a user asks to DO something (send, post, create, update, delete), use search_actions + run_action.
 When a user asks to WATCH something, use search_triggers + deploy_trigger.
 If the app isn't connected yet, use connect_app first.`,
@@ -304,7 +304,7 @@ async function handleDeployTrigger(args: {
     return {
       content: [{
         type: "text" as const,
-        text: "No HOOKDECK_WEBHOOK_URL configured. Start Hookdeck with: hookdeck listen 8788 app-triggers",
+        text: "No HOOKDECK_WEBHOOK_URL configured. Start Hookdeck with: hookdeck listen 8788 claude-autopilot",
       }],
       isError: true,
     };
@@ -635,7 +635,7 @@ Bun.serve({
             2
           ),
           meta: {
-            source: parsed.app || parsed.component_key || "app_triggers",
+            source: parsed.app || parsed.component_key || "claude_autopilot",
             event_type: parsed.event_type || parsed.name || "event",
           },
         },
@@ -644,10 +644,10 @@ Bun.serve({
       return new Response("ok");
     }
 
-    return new Response("app-triggers channel running");
+    return new Response("claude-autopilot channel running");
   },
 });
 
-console.error(`[app-triggers] Channel server running`);
-console.error(`[app-triggers] HTTP listener on http://127.0.0.1:${HTTP_PORT}`);
-console.error(`[app-triggers] Hookdeck URL: ${HOOKDECK_WEBHOOK_URL || "NOT SET"}`);
+console.error(`[claude-autopilot] Channel server running`);
+console.error(`[claude-autopilot] HTTP listener on http://127.0.0.1:${HTTP_PORT}`);
+console.error(`[claude-autopilot] Hookdeck URL: ${HOOKDECK_WEBHOOK_URL || "NOT SET"}`);

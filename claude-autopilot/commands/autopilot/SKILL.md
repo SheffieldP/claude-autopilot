@@ -52,7 +52,7 @@ user-invocable: false
 ## Where skills live
 
 ```
-app-triggers/
+claude-autopilot/
   skills/
     workflows/
       boss-email-logger/SKILL.md

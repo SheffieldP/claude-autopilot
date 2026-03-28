@@ -1,5 +1,5 @@
 {
-  "name": "app-triggers",
+  "name": "claude-autopilot",
   "type": "module",
   "private": true,
   "devDependencies": {

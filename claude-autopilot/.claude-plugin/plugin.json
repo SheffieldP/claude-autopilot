@@ -1,10 +1,10 @@
 {
-  "name": "app-triggers",
+  "name": "claude-autopilot",
   "description": "Real-time app triggers for Claude Code. Connect any of 2,000+ apps, watch for events, and build automations — all in plain English. Events push directly into your session via Channels.",
   "version": "0.1.0",
   "channels": [
     {
-      "server": "app-triggers"
+      "server": "claude-autopilot"
     }
   ]
 }

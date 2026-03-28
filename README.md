@@ -13,7 +13,7 @@ The flow: Hookdeck receives a webhook from one of your apps → forwards it to a
 Install deps:
 
 ```bash
-cd app-triggers && bun install
+cd claude-autopilot && bun install
 ```
 
 Copy the example configs:
@@ -34,7 +34,7 @@ You need two terminals.
 First one starts the webhook listener:
 
 ```bash
-hookdeck listen 8788 app-triggers
+hookdeck listen 8788 claude-autopilot
 ```
 
 It'll print a webhook URL — put that in your `.mcp.json`.
@@ -42,7 +42,7 @@ It'll print a webhook URL — put that in your `.mcp.json`.
 Second one starts Claude Code with the plugin loaded:
 
 ```bash
-claude --dangerously-skip-permissions --dangerously-load-development-channels server:app-triggers
+claude --dangerously-skip-permissions --dangerously-load-development-channels server:claude-autopilot
 ```
 
 From there, `/autopilot` gets you started — connect apps, set up triggers, create workflows. Workflows live in `skills/workflows/` as markdown files and run automatically when their trigger fires.
@@ -74,20 +74,20 @@ Create a file at `.claude/settings.local.json` in the project root:
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "app-triggers"
+    "claude-autopilot"
   ]
 }
 ```
 
-This tells Claude Code to allow all MCP tools (the Pipedream actions), file operations, and web access without prompting. The `enabledMcpjsonServers` line loads the app-triggers plugin automatically.
+This tells Claude Code to allow all MCP tools (the Pipedream actions), file operations, and web access without prompting. The `enabledMcpjsonServers` line loads the claude-autopilot plugin automatically.
 
 This file is gitignored so it stays local to your machine.
 
 ## What's in here
 
-- `app-triggers/src/channel.ts` — the MCP server, this is basically the whole thing
-- `app-triggers/commands/autopilot/` — the `/autopilot` slash command
-- `app-triggers/skills/trigger-events/` — routes incoming events to workflows
+- `claude-autopilot/src/channel.ts` — the MCP server, this is basically the whole thing
+- `claude-autopilot/commands/autopilot/` — the `/autopilot` slash command
+- `claude-autopilot/skills/trigger-events/` — routes incoming events to workflows
 - `skills/workflows/` — where your automations go
 
 ## License
