@@ -41,6 +41,40 @@ claude --dangerously-skip-permissions --dangerously-load-development-channels se
 
 From there, `/autopilot` gets you started — connect apps, set up triggers, create workflows. Workflows live in `skills/workflows/` as markdown files and run automatically when their trigger fires.
 
+## Making it fully autonomous
+
+By default, Claude Code asks for permission before using tools (running actions, reading files, etc.). For autopilot to work without interruptions, you need to allow tool access.
+
+Create a file at `.claude/settings.local.json` in the project root:
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "mcp__*",
+      "Bash(*)",
+      "Read",
+      "Edit",
+      "MultiEdit",
+      "Write",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Agent(*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "app-triggers"
+  ]
+}
+```
+
+This tells Claude Code to allow all MCP tools (the Pipedream actions), file operations, and web access without prompting. The `enabledMcpjsonServers` line loads the app-triggers plugin automatically.
+
+This file is gitignored so it stays local to your machine.
+
 ## What's in here
 
 - `app-triggers/src/channel.ts` — the MCP server, this is basically the whole thing
