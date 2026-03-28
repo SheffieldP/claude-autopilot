@@ -86,7 +86,7 @@ This file is gitignored so it stays local to your machine.
 ## What's in here
 
 - `claude-autopilot/src/channel.ts` — the MCP server, this is basically the whole thing
-- `claude-autopilot/commands/autopilot/` — the `/autopilot` slash command
+- `claude-autopilot/skills/autopilot/` — the `/autopilot` slash command
 - `claude-autopilot/skills/trigger-events/` — routes incoming events to workflows
 - `skills/workflows/` — where your automations go
 
