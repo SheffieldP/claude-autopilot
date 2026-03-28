@@ -43,6 +43,8 @@ From there, `/autopilot` gets you started — connect apps, set up triggers, cre
 
 ## Making it fully autonomous
 
+> **Warning:** This turns Claude Code into a fully autonomous agent. It will act on incoming events, use your connected apps, and execute workflows without asking for permission. That means sending emails, posting messages, creating documents — all on its own. Use this at your own risk and make sure you trust the workflows you've set up.
+
 By default, Claude Code asks for permission before using tools (running actions, reading files, etc.). For autopilot to work without interruptions, you need to allow tool access.
 
 Create a file at `.claude/settings.local.json` in the project root:
