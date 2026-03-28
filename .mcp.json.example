@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "app-triggers": {
+      "command": "bun",
+      "args": ["run", "./app-triggers/src/channel.ts"],
+      "env": {
+        "PIPEDREAM_CLIENT_ID": "your_client_id_here",
+        "PIPEDREAM_CLIENT_SECRET": "your_client_secret_here",
+        "PIPEDREAM_PROJECT_ID": "proj_XXXXXXX",
+        "PIPEDREAM_PROJECT_ENV": "development",
+        "PIPEDREAM_EXTERNAL_USER_ID": "you@example.com",
+        "HOOKDECK_WEBHOOK_URL": "https://hkdk.events/your_url_here"
+      }
+    }
+  }
+}
