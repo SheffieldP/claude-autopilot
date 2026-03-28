@@ -16,14 +16,13 @@ Install deps:
 cd claude-autopilot && bun install
 ```
 
-Copy the example configs:
+Copy the example config:
 
 ```bash
 cp .mcp.json.example .mcp.json
-cp .env.example .env
 ```
 
-Fill in your Pipedream credentials (client ID, secret, project ID from [pipedream.com/settings/account](https://pipedream.com/settings/account)) and your Hookdeck webhook URL.
+Fill in your Pipedream credentials (client ID, secret, project ID from [pipedream.com/settings/account](https://pipedream.com/settings/account)) and your Hookdeck webhook URL. All credentials go in `.mcp.json` — no separate `.env` file needed.
 
 **Heads up on Pipedream pricing:** the free tier polls every 15 minutes, so there's a delay before events come through. The paid plan ($29/mo) gives you 15-second polling, which feels basically instant for demos and real usage.
 
@@ -85,8 +84,8 @@ This file is gitignored so it stays local to your machine.
 
 ## What's in here
 
+- `.claude/commands/autopilot/` — the `/autopilot` slash command
 - `claude-autopilot/src/channel.ts` — the MCP server, this is basically the whole thing
-- `claude-autopilot/skills/autopilot/` — the `/autopilot` slash command
 - `claude-autopilot/skills/trigger-events/` — routes incoming events to workflows
 - `skills/workflows/` — where your automations go
 
