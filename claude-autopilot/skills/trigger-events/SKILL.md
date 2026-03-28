@@ -139,6 +139,11 @@ Never say "done" without showing the links. The links ARE the proof.
 - **Unknown event:** "Received an event from [source] I couldn't parse. Raw data available if you want."
 - **Rate limited:** "Hit a rate limit. Will retry shortly."
 
+## Output Rules
+
+- **Never display auth provision IDs** (apn_*) or internal Pipedream IDs in output. Just show the app name and account email.
+- **Always include direct hyperlinks** for every resource created or modified. Every output the user might want to click on gets a clickable link.
+
 ## Principles
 
 1. **Workflows first.** Always check for a matching workflow before falling back to ad-hoc handling.

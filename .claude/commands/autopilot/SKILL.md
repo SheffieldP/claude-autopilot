@@ -106,9 +106,15 @@ user-invocable: false
 **Social:** twitter, linkedin, instagram_business, facebook_pages
 **Other:** zoom, twilio, sendgrid, mailchimp, zendesk, intercom, typeform, webflow
 
+## Output Rules
+
+- **Never display auth provision IDs** (apn_*) or internal Pipedream IDs in summaries. Just show the app name and account email.
+- **Always include direct hyperlinks** for every resource created or modified — Google Docs, Gmail threads, Calendar events, Sheets, etc. Every output the user might want to click on gets a clickable link.
+- Keep summaries clean — show what was done, link to the result
+
 ## Presentation
 
 - When listing triggers or actions, use a clean table format
 - When deploying, confirm with: app, event/action, polling interval, status
-- When showing connected accounts, include: app name, account email/name, auth ID
+- When showing connected accounts, include: app name, account email/name — no auth IDs
 - Keep it conversational — this isn't a CLI, it's an assistant
