@@ -1,4 +1,4 @@
-# app-triggers
+# Claude Autopilot
 
 A Claude Code plugin that hooks into Pipedream and Hookdeck so Claude can listen for events from your apps (Gmail, Slack, GitHub, etc.) and actually do stuff in response — send emails, post messages, create docs, whatever.
 
